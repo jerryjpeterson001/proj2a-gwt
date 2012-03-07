@@ -28,10 +28,10 @@ public class Proj2a implements EntryPoint, ClickHandler
    VerticalPanel mainPanel = new VerticalPanel();
    String baseURL = "http://localhost:3000";
    ArrayList<MyStudent> students;
-      //new ArrayList<MyStudent>();
    JsArray<Student> jsonData;
    Button addButton = new Button("Add");
    Button deleteButton = new Button("Delete");
+   Button editButton = new Button("Edit");
    MyStudent selectedStudent = null;
    Button addStudentButton = new Button("Add Student");
    TextBox fnBox = new TextBox();
@@ -197,8 +197,9 @@ public class Proj2a implements EntryPoint, ClickHandler
       table.setRowCount(students.size(),true);
       table.setRowData(0,students);
       HorizontalPanel buttonRow = new HorizontalPanel();
-      mainPanel.add(addButton);
-      mainPanel.add(deleteButton);
+      buttonRow.add(addButton);
+      buttonRow.add(deleteButton);
+      buttonRow.add(editButton);
       mainPanel.add(buttonRow);
       mainPanel.add(table);
    } // end showStudents()
